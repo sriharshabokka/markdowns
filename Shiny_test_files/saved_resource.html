@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<!-- saved from url=(0074)http://127.0.0.1:7243/appe031cedbc71b6646fe2f7cdf46845fb5/?w=&__subapp__=1 -->
+<html class=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  
+  <script type="application/shiny-singletons"></script>
+  <script type="application/html-dependencies">json2[2014.02.04];jquery[1.12.4];shiny[1.0.5];ionrangeslider[2.1.6];strftime[0.9.2];bootstrap[3.3.7]</script>
+<script src="./json2-min.js(1).download"></script>
+<script src="./jquery.min.js(1).download"></script>
+<link href="./shiny(1).css" rel="stylesheet">
+<script src="./shiny.min.js(1).download"></script>
+<link href="./ion.rangeSlider(1).css" rel="stylesheet">
+<link href="./ion.rangeSlider.skinShiny(1).css" rel="stylesheet">
+<script src="./ion.rangeSlider.min.js(1).download"></script>
+<script src="./strftime-min.js(1).download"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="./bootstrap.min(1).css" rel="stylesheet">
+<script src="./bootstrap.min.js(1).download"></script>
+<script src="./html5shiv.min.js(1).download"></script>
+<script src="./respond.min.js(1).download"></script>  <title>Tabsets</title>
+
+</head>
+
+<body>
+  <div class="container-fluid">
+    <h2>Tabsets</h2>
+    <div class="row">
+      <div class="col-sm-4">
+        <form class="well">
+          <div id="dist" class="form-group shiny-input-radiogroup shiny-input-container shiny-bound-input">
+            <label class="control-label" for="dist">Distribution type:</label>
+            <div class="shiny-options-group">
+              <div class="radio">
+                <label>
+                  <input type="radio" name="dist" value="norm" checked="checked">
+                  <span>Normal</span>
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input type="radio" name="dist" value="unif">
+                  <span>Uniform</span>
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input type="radio" name="dist" value="lnorm">
+                  <span>Log-normal</span>
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input type="radio" name="dist" value="exp">
+                  <span>Exponential</span>
+                </label>
+              </div>
+            </div>
+          </div>
+          <br>
+          <div class="form-group shiny-input-container">
+            <label class="control-label" for="n">Number of observations:</label>
+            <span class="irs js-irs-0 irs-with-grid"><span class="irs"><span class="irs-line" tabindex="-1"><span class="irs-line-left"></span><span class="irs-line-mid"></span><span class="irs-line-right"></span></span><span class="irs-min" style="visibility: visible;">1</span><span class="irs-max" style="visibility: visible;">1,000</span><span class="irs-from" style="visibility: hidden;">0</span><span class="irs-to" style="visibility: hidden;">0</span><span class="irs-single" style="left: 44.8045%;">500</span></span><span class="irs-grid" style="width: 90.5579%; left: 4.62103%;"><span class="irs-grid-pol" style="left: 0%"></span><span class="irs-grid-text js-grid-text-0" style="left: 0%; margin-left: -2.36052%;">1</span><span class="irs-grid-pol small" style="left: 6.673340006673341%"></span><span class="irs-grid-pol small" style="left: 3.3366700033366703%"></span><span class="irs-grid-pol" style="left: 10.01001001001001%"></span><span class="irs-grid-text js-grid-text-1" style="left: 10.01%; visibility: visible; margin-left: -4.50644%;">101</span><span class="irs-grid-pol small" style="left: 16.68335001668335%"></span><span class="irs-grid-pol small" style="left: 13.346680013346681%"></span><span class="irs-grid-pol" style="left: 20.02002002002002%"></span><span class="irs-grid-text js-grid-text-2" style="left: 20.02%; visibility: visible; margin-left: -4.50644%;">201</span><span class="irs-grid-pol small" style="left: 26.69336002669336%"></span><span class="irs-grid-pol small" style="left: 23.35669002335669%"></span><span class="irs-grid-pol" style="left: 30.03003003003003%"></span><span class="irs-grid-text js-grid-text-3" style="left: 30.03%; visibility: visible; margin-left: -4.50644%;">301</span><span class="irs-grid-pol small" style="left: 36.70337003670337%"></span><span class="irs-grid-pol small" style="left: 33.3667000333667%"></span><span class="irs-grid-pol" style="left: 40.04004004004004%"></span><span class="irs-grid-text js-grid-text-4" style="left: 40.04%; margin-left: -4.50644%;">401</span><span class="irs-grid-pol small" style="left: 46.713380046713375%"></span><span class="irs-grid-pol small" style="left: 43.37671004337671%"></span><span class="irs-grid-pol" style="left: 50.05005005005005%"></span><span class="irs-grid-text js-grid-text-5" style="left: 50.0501%; visibility: visible; margin-left: -4.50644%;">501</span><span class="irs-grid-pol small" style="left: 56.72339005672339%"></span><span class="irs-grid-pol small" style="left: 53.38672005338672%"></span><span class="irs-grid-pol" style="left: 60.06006006006006%"></span><span class="irs-grid-text js-grid-text-6" style="left: 60.0601%; visibility: visible; margin-left: -4.50644%;">601</span><span class="irs-grid-pol small" style="left: 66.7334000667334%"></span><span class="irs-grid-pol small" style="left: 63.39673006339673%"></span><span class="irs-grid-pol" style="left: 70.07007007007007%"></span><span class="irs-grid-text js-grid-text-7" style="left: 70.0701%; visibility: visible; margin-left: -4.50644%;">701</span><span class="irs-grid-pol small" style="left: 76.74341007674342%"></span><span class="irs-grid-pol small" style="left: 73.40674007340674%"></span><span class="irs-grid-pol" style="left: 80.08008008008008%"></span><span class="irs-grid-text js-grid-text-8" style="left: 80.0801%; margin-left: -4.50644%;">801</span><span class="irs-grid-pol small" style="left: 86.75342008675342%"></span><span class="irs-grid-pol small" style="left: 83.41675008341674%"></span><span class="irs-grid-pol" style="left: 90.09009009009009%"></span><span class="irs-grid-text js-grid-text-9" style="left: 90.0901%; visibility: visible; margin-left: -4.50644%;">901</span><span class="irs-grid-pol" style="left: 100%"></span><span class="irs-grid-text js-grid-text-10" style="left: 100%; visibility: visible; margin-left: -6.22318%;">1,000</span></span><span class="irs-bar" style="left: 4.72103%; width: 45.2336%;"></span><span class="irs-bar-edge"></span><span class="irs-shadow shadow-single" style="display: none;"></span><span class="irs-slider single" style="left: 45.2336%;"></span></span><input class="js-range-slider irs-hidden-input shiny-bound-input" id="n" data-min="1" data-max="1000" data-from="500" data-step="1" data-grid="true" data-grid-num="9.99" data-grid-snap="false" data-prettify-separator="," data-prettify-enabled="true" data-keyboard="true" data-keyboard-step="0.1001001001001" data-data-type="number" readonly="">
+          </div>
+        </form>
+      </div>
+      <div class="col-sm-8">
+        <div class="tabbable">
+          <ul class="nav nav-tabs" data-tabsetid="7102">
+            <li class="active">
+              <a href="http://127.0.0.1:7243/appe031cedbc71b6646fe2f7cdf46845fb5/?w=&amp;__subapp__=1#tab-7102-1" data-toggle="tab" data-value="Plot">Plot</a>
+            </li>
+            <li>
+              <a href="http://127.0.0.1:7243/appe031cedbc71b6646fe2f7cdf46845fb5/?w=&amp;__subapp__=1#tab-7102-2" data-toggle="tab" data-value="Summary">Summary</a>
+            </li>
+            <li>
+              <a href="http://127.0.0.1:7243/appe031cedbc71b6646fe2f7cdf46845fb5/?w=&amp;__subapp__=1#tab-7102-3" data-toggle="tab" data-value="Table">Table</a>
+            </li>
+          </ul>
+          <div class="tab-content" data-tabsetid="7102">
+            <div class="tab-pane active" data-value="Plot" id="tab-7102-1">
+              <div id="plot" class="shiny-plot-output shiny-bound-output" style="width: 100% ; height: 400px"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAkEAAAGQCAMAAACeUESIAAAAmVBMVEUAAAAAADoAAGYAOjoAOmYAOpAAZpAAZrY6AAA6ADo6AGY6OgA6OpA6ZpA6ZrY6kNtmAABmADpmAGZmOgBmZmZmkLZmkNtmtttmtv91qtuQOgCQOjqQZjqQtmaQtpCQttuQ2/+2ZgC2kGa229u22/+2///bkDrbkGbbtmbb25Db/7bb/9vb////tmb/25D/27b//7b//9v///+HiejaAAAACXBIWXMAAAsSAAALEgHS3X78AAAMM0lEQVR4nO2d64LixhFGxXgng51NYGM7IayTQLKLbwMG3v/hogswDAgk8VV3F+icH8MOW5KK6jOtbkDqbAugkKVOAO4cDAINDAINDAINDAINDAINDAINDAINDAINDAINDAINDAINDAINDAINDAINDAINDAINDAINDAINDAINDAINDAINDAINDAINDAINDLqBxWC2XQ2zLHv6ut38lGV/fd3uH1fDUersIoNB3VmPX7bbZVYZNC8e898Pj/lzvQKDdmymgx+GT/+bPv1rmH34kj/x8zAb/Pi6e/6/2Z9+yj58/Xk4mORdUDap+qGc1fDpyx/jp6/7x9ysnnVCGLRjM837kOffi59vfUr+j+r5X8rfvim7ndypWfH0nwvTlmXsYLZ/zDuo59fUryUqGLQjV+Kl/Dna/pI9v66Gg/9sV+PBrHp+mT19yUc+/1jnz5SOrMfVWazscubZZP+Y76FnpzEM2lH2LNXPQpGyTynOV9Xzxa/rcdX/rIa5Qavvn19zuSY1BlWnt96AQTv2BuU9yEWDCml2BpUsstHZWaz60SMwaMeJQUdnsVqDllnVB52NpOmD+sqJQUcj6VODjsZB+7ij2TzjoL5yalA5m//7tsag6jz1x+cs+8vbO4mHR+Zi0MiyeD/o8n/yfhA0UL4nfQnek4ZmFpcHy3wuBtANDAINDAINDAINDAINDAINDAINDAINDAINDAINDAINDAINDAINDAINDAINDAINDAINDAINDAINDAINDAINDAINDAINDAINDAINDAINDAINDAINDAINDAKNZoPK2/+Xt2/vIf9sJHWGyWk0aDOtbti17NnN3SowqJFGg9Z/+/rusV9gUCP0QVfBoEaax0HVfW8ZB2FQPczFroJBjWDQVTCoEWbzV8GgRhhJ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" width="577" height="400"></div>
+            </div>
+            <div class="tab-pane" data-value="Summary" id="tab-7102-2">
+              <pre id="summary" class="shiny-text-output noplaceholder shiny-bound-output"></pre>
+            </div>
+            <div class="tab-pane" data-value="Table" id="tab-7102-3">
+              <div id="table" class="shiny-html-output shiny-bound-output"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+</body></html>
