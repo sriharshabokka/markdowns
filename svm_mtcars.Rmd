@@ -1,0 +1,107 @@
+---
+title: "SVM_mtcars"
+author: "Harsha"
+date: "April 17, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+x=c(mtcars$disp)
+y=c(mtcars$mpg)
+
+#Create a data frame of the data
+train=data.frame(x,y)
+```
+
+## SVM
+
+Support Vector Machines (SVM) is a data classification method that separates data using hyperplanes. The concept of SVM is very intuitive and easily understandable. If we have labeled data, SVM can be used to generate multiple separating hyperplanes such that the data space is divided into segments and each segment contains only one kind of data. SVM technique is generally useful for data which has non-regularity which means, data whose distribution is unknown.
+
+The current rmd performs a simple classification of milage and cylinder displacement of cars from the mtcars database.
+```{r mtcars}
+#Plot the dataset
+plot(train,pch=16)
+
+#Linear regression
+model <- lm(y ~ x, train)
+
+#Plot the model using abline
+abline(model)
+
+
+```
+
+Based on the model fit and the abline it seems like a simple linear classification. 
+
+```{r pressure, echo=FALSE}
+#SVM
+ 
+library(e1071)
+ 
+#Fit a model. The function syntax is very similar to lm function
+ 
+model_svm <- svm(y ~ x , train)
+ 
+#Use the predictions on the data
+ 
+pred <- predict(model_svm, train)
+ 
+ 
+#Plot the predictions and the plot to see our model fit
+ 
+plot(train$x, pred, col = "blue", pch=4)
+```
+Let's calculate the rmse errors for both the models:
+
+```{r}
+#Linear model has a residuals part which we can extract and directly calculate rmse
+ 
+error <- model$residuals
+ 
+lm_error <- sqrt(mean(error^2)) # 3.148207
+ 
+#For svm, we have to manually calculate the difference between actual values (train$y) with our predictions (pred)
+ 
+error_2 <- train$y - pred
+ 
+svm_error <- sqrt(mean(error_2^2));# 2.492286
+```
+```{r}
+svm_tune <- tune(svm, y ~ x, data = train,
+ ranges = list(epsilon = seq(0,1,0.01), cost = 2^(2:9))
+)
+print(svm_tune)
+ 
+#Printing gives the output:
+#Parameter tuning of 'svm':
+# - sampling method: 10-fold cross validation 
+ 
+#- best parameters:
+# epsilon cost
+#0.09 256
+ 
+#- best performance: 2.569451
+#This best performance denotes the MSE. The corresponding RMSE is 1.602951 which is square root of MSE
+```
+In this case, the rmse for linear model is ~3.14 whereas our svm model has a lower error of ~2.49. A straightforward implementation of SVM has an accuracy higher than the linear regression model. However, the SVM model goes far beyond that. We can further improve our SVM model and tune it so that the error is even lower. We will now go deeper into the SVM function and the tune function. 
+
+```{r}
+#The best model
+best_mod <- svm_tune$best.model
+best_mod_pred <- predict(best_mod, train) 
+ 
+error_best_mod <- train$y - best_mod_pred 
+ 
+# this value can be different on your computer
+# because the tune method randomly shuffles the data
+best_mod_RMSE <- sqrt(mean(error_best_mod^2)) # 1.290738
+
+plot(svm_tune)
+
+plot(train,pch=16)
+points(train$x, best_mod_pred, col = "blue", pch=4)
+
+
+```
+
